@@ -8,10 +8,10 @@ interface IRequest {
   slug: string;
 }
 
-@injectable()
+// @injectable()
 export class CreateCategoryUseCase {
   constructor(
-    @inject("CategoriesRepository")
+    // @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
   ) {}
 

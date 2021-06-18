@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { pathsToModuleNameMapper } from "ts-jest/utils";
 
 import { compilerOptions } from "./tsconfig.json";
@@ -12,6 +13,8 @@ export default {
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: "<rootDir>/src/",
   }),
+
+  setupFilesAfterEnv: ["<rootDir>/jest.config.ts"],
 
   preset: "ts-jest",
 

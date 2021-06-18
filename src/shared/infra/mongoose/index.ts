@@ -11,6 +11,7 @@ export default ({ db_uri }: IInput) => {
   const connect = () => {
     mongoose
       .connect(db_uri, {
+        useFindAndModify: false,
         useNewUrlParser: true,
         useUnifiedTopology: true,
         dbName: "test",
