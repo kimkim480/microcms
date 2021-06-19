@@ -8,4 +8,5 @@ export interface ICategoriesRepository {
   findBySlug(slug: string): Promise<Category>;
   list(name?: string, slug?: string, id?: string): Promise<Category[]>;
   update(id: string, options: IUpdateCategoryDTO): Promise<Category>;
+  delete(id: string): Promise<Category>;
 }

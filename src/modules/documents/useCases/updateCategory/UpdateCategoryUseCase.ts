@@ -10,7 +10,10 @@ export class UpdateCategoryUseCase {
     @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
   ) {}
-  async execute(id, { name, slug }: IUpdateCategoryDTO): Promise<Category> {
+  async execute(
+    id: string,
+    { name, slug }: IUpdateCategoryDTO
+  ): Promise<Category> {
     const updatedCategory = await this.categoriesRepository.update(id, {
       name,
       slug,

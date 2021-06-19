@@ -61,4 +61,14 @@ export class CategoriesRepositoryInMemory implements ICategoriesRepository {
 
     return category;
   }
+
+  async delete(id: string): Promise<Category> {
+    const deletedCategory = this.categories.find(
+      (category) => category.id === id
+    );
+
+    this.categories.filter((category) => category.id !== id);
+
+    return deletedCategory;
+  }
 }

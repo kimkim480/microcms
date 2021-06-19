@@ -50,6 +50,7 @@ export class CategoriesRepository implements ICategoriesRepository {
     { name, slug }: IUpdateCategoryDTO
   ): Promise<Category> {
     let category: Category;
+
     if (name) {
       category = await this.repository
         .findByIdAndUpdate(id, { name }, { new: true })
@@ -63,5 +64,11 @@ export class CategoriesRepository implements ICategoriesRepository {
     }
 
     return category;
+  }
+
+  async delete(id: string): Promise<Category> {
+    const deletedCategory = await this.repository.findByIdAndDelete(id).exec();
+
+    return deletedCategory;
   }
 }
